@@ -77,3 +77,9 @@ For licensing, see LICENSE.md or http://ckeditor.com/license
 {
 	border-right: 0px;
 }
+
+/* reset position for dialog in balloontolbar */
+.cke_balloon_content .cke_dialog_position_fixed
+{
+	position: static;
+}
