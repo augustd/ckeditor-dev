@@ -1,7 +1,7 @@
 /* bender-tags: editor,widget */
 /* bender-ckeditor-plugins: easyimage,toolbar */
-/* bender-include: ../widget/_helpers/tools.js */
-/* global widgetTestsTools */
+/* bender-include: ../widget/_helpers/tools.js,./manual/_helpers/tools.js */
+/* global widgetTestsTools, isUnsupportedEnvironment */
 
 ( function() {
 	'use strict';
@@ -18,6 +18,12 @@
 	};
 
 	bender.test( {
+		setUp: function() {
+			if ( isUnsupportedEnvironment() ) {
+				assert.ignore();
+			}
+		},
+
 		'test easyimage_class - changed': function() {
 			widgetTestsTools.assertWidget( {
 				count: 1,

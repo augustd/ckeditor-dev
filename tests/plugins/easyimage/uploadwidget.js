@@ -2,7 +2,8 @@
 /* bender-ckeditor-plugins: easyimage,toolbar,undo */
 /* bender-include: %BASE_PATH%/plugins/clipboard/_helpers/pasting.js */
 /* bender-include: %BASE_PATH%/plugins/uploadfile/_helpers/waitForImage.js */
-/* global pasteFiles, waitForImage */
+/* bender-include: ./manual/_helpers/tools.js */
+/* global pasteFiles, waitForImage, isUnsupportedEnvironment */
 
 ( function() {
 	'use strict';
@@ -99,7 +100,7 @@
 		},
 
 		setUp: function() {
-			if ( !CKEDITOR.plugins.clipboard.isFileApiSupported ) {
+			if ( !CKEDITOR.plugins.clipboard.isFileApiSupported || isUnsupportedEnvironment() ) {
 				assert.ignore();
 			}
 

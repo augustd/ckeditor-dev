@@ -1,4 +1,4 @@
-/* exported getToken */
+/* exported getToken, isUnsupportedEnvironment */
 /* global console */
 
 // WARNING: The URL below should not be used for any other purpose than Easy Image plugin development.
@@ -39,4 +39,8 @@ function getToken( callback ) {
 	};
 
 	xhr.send( null );
+}
+
+function isUnsupportedEnvironment() {
+	return CKEDITOR.env.ie && CKEDITOR.env.version < 11;
 }
