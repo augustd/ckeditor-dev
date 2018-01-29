@@ -869,7 +869,7 @@
 		/**
 		 * Feature detection indicating whether current browser supports methods essential to send files over XHR request.
 		 *
-		 * @since 4.8.1
+		 * @since 4.9.0
 		 * @property {Boolean} isFileUploadSupported
 		 */
 		isFileUploadSupported: ( function() {
